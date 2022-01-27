@@ -11,58 +11,67 @@
         informations suivantes :</p> <br>
 
 <?php
-// // test data
+ // test data
 // var_dump($_POST); 
-// // nom = MOUSE 
-// echo 'Nom : '.filter_input(INPUT_POST,'nom').'<br>';
-// // mot_de_passe = Mickey
-// echo 'Mot de passe : '.filter_input(INPUT_POST,'mot_de_passe').'<br>'; 
-// // sexe = M 
-// $sexe = filter_input(INPUT_POST,'sexe');
-// if ($sexe == "?"){echo 'sexe =  ne sais pas. <br>';} 
-// else { echo 'sexe : '.$sexe.'<br>'; };
+// nom = MOUSE 
+echo 'Nom : '.filter_input(INPUT_POST,'nom').'<br>';
+// mot_de_passe = Mickey
+echo 'Mot de passe : '.filter_input(INPUT_POST,'mot_de_passe').'<br>'; 
+// sexe = M 
+$sexe = filter_input(INPUT_POST,'sexe');
+if ($sexe == "?"){echo 'sexe =  ne sais pas. <br>';} 
+else { echo 'sexe : '.$sexe.'<br>'; };
 
-// // photo = identité.jpg 
-// echo 'Photo : '.filter_input(INPUT_POST,'photo').'<br>'; 
+// photo = identité.jpg 
+echo 'Photo : '.filter_input(INPUT_POST,'photo').'<br>'; 
 
 
-// // couleurs =  
-// // // utiliser var_dump pour verifier ce que on a saisi
-// // var_dump($arrSaisi);
+// couleurs =  
+// utiliser var_dump pour verifier ce que on a saisi
+// var_dump($arrSaisi);
 
-// $arrSaisi = filter_input(INPUT_POST,'couleurs', FILTER_DEFAULT, FILTER_REQUIRE_ARRAY);
+$arrSaisi = filter_input(INPUT_POST,'couleurs', FILTER_DEFAULT, FILTER_REQUIRE_ARRAY);
 
-// if(isset($arrSaisi) && !empty($arrSaisi)){
-//     echo 'Couleurs = ';
-//     echo '<br>';
-//     if($arrSaisi["bleu"] == "on"){
-//     echo 'Bleu = '.$arrSaisi["bleu"].'<br>'; 
-// };
-// if($arrSaisi["blanc"] == "on"){
-//     echo 'Blanc = '.$arrSaisi["blanc"].'<br>'; 
-// };
-// if($arrSaisi["rouge"] == "on"){
-//     echo 'Rouge = '.$arrSaisi["rouge"].'<br>'; 
-// };
-// }
-// else {
-// echo 'Couleur = ne sait pas';
-// };
+if(isset($arrSaisi) && !empty($arrSaisi)){
+    echo 'Couleurs = ';
+    echo '<br>';
+    if($arrSaisi["bleu"] == "on"){
+    echo 'Bleu = '.$arrSaisi["bleu"].'<br>'; 
+};
+if($arrSaisi["blanc"] == "on"){
+    echo 'Blanc = '.$arrSaisi["blanc"].'<br>'; 
+};
+if($arrSaisi["rouge"] == "on"){
+    echo 'Rouge = '.$arrSaisi["rouge"].'<br>'; 
+};
+}
+else {
+echo 'Couleur = ne sait pas';
+};
 
-// //langue = F 
-// echo 'Langue = '.filter_input(INPUT_POST,'langue').'<br>'; 
+//langue = F 
+echo 'Langue = '.filter_input(INPUT_POST,'langue').'<br>'; 
 
 // fruits =  
-var_dump(filter_input(INPUT_POST,'fruits',FILTER_DEFAULT, FILTER_REQUIRE_ARRAY));
-// 0 = A 
+$arrFruits = filter_input(INPUT_POST,'fruits',FILTER_DEFAULT, FILTER_REQUIRE_ARRAY);
+$sizeFruits = count($arrFruits);
 
-// 1 = F 
+if (isset($arrFruits)&&!empty($arrFruits)){
+    $i = 0;
+while($i<$sizeFruits){
+    echo $i." = ".$arrFruits[$i].'<br>';
+    $i++;
+}
+}
+else{
+    echo 'ne sait pas';
+}
 
-// // commentaire = Consultant en système d’information
-// echo 'Commentaire = '.filter_input(INPUT_POST,'commentaire').'<br>';  
-// // invisible = 123 
-// echo 'Invisible = '.filter_input(INPUT_POST,'invisible').'<br>'; 
-// // soumettre = OK  
-// echo 'Soumettre= '.filter_input(INPUT_POST,'soumettre').'<br>';   ?>
+// commentaire = Consultant en système d’information
+echo 'Commentaire = '.filter_input(INPUT_POST,'commentaire').'<br>';  
+// invisible = 123 
+echo 'Invisible = '.filter_input(INPUT_POST,'invisible').'<br>'; 
+// soumettre = OK  
+echo 'Soumettre= '.filter_input(INPUT_POST,'soumettre').'<br>';   ?>
 </body>
 </html>
