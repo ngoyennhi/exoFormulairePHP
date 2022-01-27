@@ -12,7 +12,7 @@
 
 <?php
 // // test data
-// // var_dump($_POST); 
+// var_dump($_POST); 
 // // nom = MOUSE 
 // echo 'Nom : '.filter_input(INPUT_POST,'nom').'<br>';
 // // mot_de_passe = Mickey
@@ -22,8 +22,8 @@
 // if ($sexe == "?"){echo 'sexe =  ne sais pas. <br>';} 
 // else { echo 'sexe : '.$sexe.'<br>'; };
 
-// photo = identité.jpg 
-echo 'Photo : '.filter_input(INPUT_POST,'photo').'<br>'; 
+// // photo = identité.jpg 
+// echo 'Photo : '.filter_input(INPUT_POST,'photo').'<br>'; 
 
 
 // // couleurs =  
@@ -51,12 +51,13 @@ echo 'Photo : '.filter_input(INPUT_POST,'photo').'<br>';
 
 // //langue = F 
 // echo 'Langue = '.filter_input(INPUT_POST,'langue').'<br>'; 
-// // fruits =  
-// echo 'Fruits = '.filter_input(INPUT_POST,'fruits').'<br>'; 
-// // 0 = A 
-// echo 'Fruits = '.filter_input(INPUT_POST,'langue').'<br>'; 
-// // 1 = F 
-// echo 'Fruits = '.filter_input(INPUT_POST,'langue').'<br>'; 
+
+// fruits =  
+var_dump(filter_input(INPUT_POST,'fruits',FILTER_DEFAULT, FILTER_REQUIRE_ARRAY));
+// 0 = A 
+
+// 1 = F 
+
 // // commentaire = Consultant en système d’information
 // echo 'Commentaire = '.filter_input(INPUT_POST,'commentaire').'<br>';  
 // // invisible = 123 
