@@ -54,14 +54,13 @@ echo 'Langue = '.filter_input(INPUT_POST,'langue').'<br>';
 
 // fruits =  
 $arrFruits = filter_input(INPUT_POST,'fruits',FILTER_DEFAULT, FILTER_REQUIRE_ARRAY);
-$sizeFruits = count($arrFruits);
 
 if (isset($arrFruits)&&!empty($arrFruits)){
-    $i = 0;
-while($i<$sizeFruits){
-    echo $i." = ".$arrFruits[$i].'<br>';
-    $i++;
-}
+    $fruits = ['A' => 'Abricot', 'C' => 'Cerises','F' => 'Fraise', 'P' => 'Pêche' , '?' => 'Ne sait pas'];
+    foreach ($arrFruits as $value) {
+     echo $fruits[$value];
+     echo '<br>';
+    } ; 
 }
 else{
     echo 'ne sait pas';
